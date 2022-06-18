@@ -9,6 +9,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+  background-color: #5b5b5b;
 }
 
 #pokedexlogo {
@@ -16,7 +17,22 @@
   height: auto;
 }
 
-#searchButton {
+#mainInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 20px 0;
+  height: 685px;
+}
+
+.btn {
+  background-color: #960000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,12 +43,74 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: 10%;
+  margin-bottom: 1vw;
+  font-weight: 800;
+}
+
+#saveButton {
+  background-color: #919191;
+}
+
+#searchButton:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 10%;
+  font-weight: 800;
+  color: black;
+  background-color: #919191;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+svg {
+  margin-left: auto;
+}
+
+#divider {
+  width: 10px;
+  height: 80%;
+  background-color: red;
+}
+
+@-webkit-keyframes motion {
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  100% {
+    background-color: #dadada;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@keyframes motion {
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  100% {
+    background-color: #dadada;
+    left: 0px;
+    top: 0px;
+  }
 }
 
 #pokemonCard {
   font-weight: 800;
   border-radius: 30px;
-  background-color: #dadada;
+  background-color: #dcdcdc;
+  background-image: linear-gradient(160deg, #666666 0%, #dcdcdc 100%);
+  border: 2px solid black;
   height: 200px;
   margin: 5% 0 0 10%;
   padding: 20px;
@@ -44,6 +122,14 @@
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  -webkit-animation-name: motion;
+          animation-name: motion;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+#pokemonCard:hover {
+  opacity: 70%;
 }
 
 #pokemonImg {
@@ -51,8 +137,8 @@
 }
 
 #imgPokemon {
-  width: 90%;
-  height: 90%;
+  width: 150%;
+  height: 100%;
 }
 
 #pokemonInfo {
@@ -60,7 +146,19 @@
 }
 
 #pokemonNumber {
-  color: #919191;
+  color: #5b5b5b;
   font-weight: 800;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 10%;
+  background-color: #505050;
 }
 /*# sourceMappingURL=index.css.map */

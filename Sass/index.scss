@@ -1,39 +1,100 @@
 $bgCardColor : rgb(218, 218, 218);
+$bgElements: #505050; 
 $blackColor : black;
-$secondaryFontColor:#919191 ;
+$secondaryFontColor:#5b5b5b ;
 $importantFontWeight: 800;
+$bgnewPokemonButton: rgb(150, 0, 0);
 
 #logoGeneral{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    background-color: $secondaryFontColor;
+    
+
+    
+    
 }
 #pokedexlogo{
     width: 30%;
     height: auto;
 }
 
-#searchButton{
+
+#mainInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 20px 0;
+    height: 685px;
+    
+}
+.btn{
+    background-color: $bgnewPokemonButton;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 10%;
-}
+    margin-bottom:1vw ;
+   
+    font-weight: $importantFontWeight;
 
+}
+#saveButton{
+    background-color: #919191;
+}
+#searchButton:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+    font-weight: $importantFontWeight;
+    color: $blackColor;
+    background-color: #919191;
+    transform: scale(1.1);
+
+}
+svg{
+    margin-left: auto;
+    
+}
+#divider{
+
+    
+    width: 10px;
+    height: 80%;
+    background-color: red;
+}
+@keyframes motion{
+    
+    50%  {background-color:blue; left:200px; top:200px;}
+    
+    100% {background-color:$bgCardColor; left:0px; top:0px;}
+  }
+  
 #pokemonCard{
     font-weight: $importantFontWeight;
     border-radius: 30px;
-    background-color: $bgCardColor;
+    // background-color: $bgCardColor;
+    background-color: #dcdcdc;
+    background-image: linear-gradient(160deg, #666666 0%, #dcdcdc 100%);
+
+   
+
+    border: 2px solid $blackColor;
     height: 200px;
     margin: 5% 0 0 10%;
     padding: 20px;
     display: flex;
     align-items: center;
-    
     align-content: center;
+    animation-name: motion;
+    animation-duration: 3s ;
     
-    
+}
+#pokemonCard:hover{
+    opacity: 70%;
 }
 #pokemonImg{
     margin-right: 10%;
@@ -41,13 +102,14 @@ $importantFontWeight: 800;
 }
 
 #imgPokemon{
-    width: 90%;
-    height: 90%;
+    width: 150%;
+    height: 100%;
     
 }
 
 #pokemonInfo{
     height: 100%;
+    
     
 }
 
@@ -55,4 +117,11 @@ $importantFontWeight: 800;
     color: $secondaryFontColor;
     font-weight: $importantFontWeight;
 
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+    
+    background-color: $bgElements;
 }

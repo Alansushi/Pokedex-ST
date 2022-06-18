@@ -1,9 +1,10 @@
+//Generamos la petición GET a la API//
 const onGetRequest = (pokemones) => {
   //Generamos un número aleatorio//
   function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  let numberValue = randomNumber(0, 300);
+  let numberValue = randomNumber(0, 248);
 
   //Comenzamos petición GET//
 
@@ -15,13 +16,7 @@ const onGetRequest = (pokemones) => {
         const response = JSON.parse(xhr.response);
 
         let pokemon = response;
-
-        // for (let property in response) {
-        //   console.log([property]);
-        //   response[property];
-
-        //   pokemon.push(response[property]);
-        // }
+        pokemonToSave = response;
 
         renderNewPokemon(pokemon);
       }
@@ -34,6 +29,30 @@ const onGetRequest = (pokemones) => {
   xhr.send();
 };
 onGetRequest();
+let pokemonToSave;
+//Creamos la petición para postear a la BD el pokemon //
+const onSave = (pokemon) => {
+  const xhr = new XMLHttpRequest();
+  xhr.addEventListener("readystatechange", () => {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        xhr.response;
+      }
+    }
+  });
+  const URL_DB =
+    "mongodb+srv://alanguerrerog:JNfX55zoQNsBW3BV@cluster0.aweaow5.mongodb.net/pokedex?retryWrites=true&w=majority";
+
+  xhr.open("POST", URL_DB);
+  xhr.send(JSON.stringify(pokemon));
+};
+//Generamos la función que haga un GET cada 30 segundos//
+const repeatGetFunction = () => {
+  locationreload();
+  onGetRequest();
+};
+
+setInterval(repeatGetFunction, 30000);
 
 //Comienza función para asignar valores de porpiedad a etiquetas//
 const renderNewPokemon = (pokemon) => {
@@ -55,20 +74,20 @@ const renderNewPokemon = (pokemon) => {
   img.setAttribute("src", defaultImg);
   img.setAttribute("id", "imgPokemon");
 
-  let pkmnNumber = document.createElement("div");
+  let pkmnNumber = document.createElement("span");
   pkmnNumber.setAttribute("id", "pokemonNumber");
-  let pkmnName = document.createElement("div");
+  let pkmnName = document.createElement("span");
   pkmnName.setAttribute("id", "pokemonName");
   let allpkmnTypes;
   pokemon.types.forEach((slot) => {
     allpkmnTypes = slot.type.name;
   });
 
-  let pkmnType = document.createElement("div");
+  let pkmnType = document.createElement("span");
   pkmnType.setAttribute("id", "pokemonType");
-  let pkmnHeight = document.createElement("div");
+  let pkmnHeight = document.createElement("span");
   pkmnHeight.setAttribute("id", "pokemonHeigth");
-  let pkmnWeight = document.createElement("div");
+  let pkmnWeight = document.createElement("span");
   pkmnWeight.setAttribute("id", "pokemonWeight");
 
   pkmnNumber.textContent = `N.º ${pokemon.id}`;
@@ -97,7 +116,11 @@ function locationreload() {
 
 newElement.addEventListener("click", function () {
   locationreload();
-  // let oldCard = document.getElementById('pokemonCard')
 
   onGetRequest();
+});
+
+let saveButton = document.querySelector("#saveButton");
+saveButton.addEventListener("click", function () {
+  onSave(pokemonToSave);
 });
