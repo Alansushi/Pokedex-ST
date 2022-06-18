@@ -1,3 +1,6 @@
+$bgCardColor : rgb(62, 162, 255);
+$blackColor : black;
+
 #logoGeneral{
     display: flex;
     align-items: center;
@@ -6,5 +9,26 @@
 }
 #pokedexlogo{
     width: 30%;
+    height: auto;
+}
+
+#searchButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pokemonCard{
+    
+    border-radius: 30px;
+    background-color: $bgCardColor;
+    height: auto;
+    margin: 10%;
+    padding: 20px;
+    
+}
+
+#imgPokemon{
+    width: 100%;
     height: auto;
 }
