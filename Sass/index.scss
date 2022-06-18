@@ -1,5 +1,7 @@
-$bgCardColor : rgb(62, 162, 255);
+$bgCardColor : rgb(218, 218, 218);
 $blackColor : black;
+$secondaryFontColor:#919191 ;
+$importantFontWeight: 800;
 
 #logoGeneral{
     display: flex;
@@ -16,19 +18,41 @@ $blackColor : black;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 10%;
 }
 
 #pokemonCard{
-    
+    font-weight: $importantFontWeight;
     border-radius: 30px;
     background-color: $bgCardColor;
-    height: auto;
-    margin: 10%;
+    height: 200px;
+    margin: 5% 0 0 10%;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // align-content: center;
+    // justify-items: center;
+    
+}
+#pokemonImg{
+    margin-right: 10%;
     
 }
 
 #imgPokemon{
     width: 100%;
-    height: auto;
+    height: 100%;
+    
+}
+
+#pokemonInfo{
+    height: 200px;
+    padding: 0px 0 20px 0;
+}
+
+#pokemonNumber{
+    color: $secondaryFontColor;
+    font-weight: $importantFontWeight;
+
 }

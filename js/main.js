@@ -8,12 +8,12 @@ const onGetRequest = (pokemon) => {
   //Comenzamos petición GET//
 
   const xhr = new XMLHttpRequest();
-  console.log(xhr);
+
   xhr.addEventListener("readystatechange", () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
         const response = JSON.parse(xhr.response);
-        console.log(response);
+
         let pokemon = response;
 
         // for (let property in response) {
@@ -33,7 +33,7 @@ const onGetRequest = (pokemon) => {
   xhr.open("GET", URL_API);
   xhr.send();
 };
-console.log(onGetRequest());
+onGetRequest();
 
 //Comienza función para asignar valores de porpiedad a etiquetas//
 const renderNewPokemon = (pokemon) => {
@@ -50,13 +50,15 @@ const renderNewPokemon = (pokemon) => {
 
   //Hace falta div de imagen//
   let defaultImg = pokemon.sprites.other.dream_world.front_default;
-  console.log(defaultImg);
+
   let img = document.createElement("img");
   img.setAttribute("src", defaultImg);
   img.setAttribute("id", "imgPokemon");
+
+  let pkmnNumber = document.createElement("div");
+  pkmnNumber.setAttribute("id", "pokemonNumber");
   let pkmnName = document.createElement("div");
   pkmnName.setAttribute("id", "pokemonName");
-  console.log(pokemon.types);
   let allpkmnTypes;
   pokemon.types.forEach((slot) => {
     allpkmnTypes = slot.type.name;
@@ -69,12 +71,14 @@ const renderNewPokemon = (pokemon) => {
   let pkmnWeight = document.createElement("div");
   pkmnWeight.setAttribute("id", "pokemonWeight");
 
+  pkmnNumber.textContent = `N.º ${pokemon.id}`;
   pkmnName.textContent = `NOMBRE: ${pokemon.name}`;
   pkmnType.textContent = `TIPO: ${allpkmnTypes}`;
   pkmnHeight.textContent = `ALTURA: ${pokemon.height}`;
   pkmnWeight.textContent = `PESO: ${pokemon.weight}`;
 
   pkmnImg.appendChild(img);
+  pkmnInfo.appendChild(pkmnNumber);
   pkmnInfo.appendChild(pkmnName);
   pkmnInfo.appendChild(pkmnType);
   pkmnInfo.appendChild(pkmnHeight);
