@@ -30,9 +30,9 @@ $importantFontWeight: 800;
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    // align-content: center;
-    // justify-items: center;
+    
+    align-content: center;
+    
     
 }
 #pokemonImg{
@@ -41,14 +41,14 @@ $importantFontWeight: 800;
 }
 
 #imgPokemon{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     
 }
 
 #pokemonInfo{
-    height: 200px;
-    padding: 0px 0 20px 0;
+    height: 100%;
+    
 }
 
 #pokemonNumber{

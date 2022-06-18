@@ -1,4 +1,4 @@
-const onGetRequest = (pokemon) => {
+const onGetRequest = (pokemones) => {
   //Generamos un número aleatorio//
   function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -87,3 +87,17 @@ const renderNewPokemon = (pokemon) => {
   pkmnCard.appendChild(pkmnImg);
   pkmnCard.appendChild(pkmnInfo);
 };
+
+//Generamos el listener del click del botón de mostrar nuevo pokemon//
+
+let newElement = document.querySelector("#searchButton");
+function locationreload() {
+  location.reload();
+}
+
+newElement.addEventListener("click", function () {
+  locationreload();
+  // let oldCard = document.getElementById('pokemonCard')
+
+  onGetRequest();
+});
