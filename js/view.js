@@ -1,12 +1,5 @@
-const onGetRequest = (pokemones) => {
-  //Generamos un número aleatorio//
-  function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  let numberValue = randomNumber(0, 248);
-
+const onGetSavedPokemons = (pokemones) => {
   //Comenzamos petición GET//
-
   const xhr = new XMLHttpRequest();
 
   xhr.addEventListener("readystatechange", () => {
@@ -15,41 +8,50 @@ const onGetRequest = (pokemones) => {
         let allPokemonsArray = [];
         const response = JSON.parse(xhr.response);
 
-        for (let property in response.results) {
+        for (let property in response) {
           response[property];
-          allPokemonsArray.push(response.results[property]);
+          allPokemonsArray.push(response[property]);
         }
-        console.log(allPokemonsArray);
+
         renderAllPokemons(allPokemonsArray);
       }
     }
   });
 
-  const URL_API = `https://pokeapi.co/api/v2/pokemon/`;
+  const URL_DB = `https://pokedex-5c815-default-rtdb.firebaseio.com/savedPokemons.json`;
 
-  xhr.open("GET", URL_API);
+  xhr.open("GET", URL_DB);
   xhr.send();
 };
-onGetRequest();
+onGetSavedPokemons();
 
 const renderNewPokemon = (pokemon) => {
-  let pkmnCard = document.querySelector("#pokemonCard");
+  let show = document.querySelector("#showPokemons");
+
+  let pkmnCard = document.createElement("div");
+  pkmnCard.setAttribute("id", "savedPokemonCard");
+  pkmnCard.classList.add("col");
+  pkmnCard.classList.add("col-lg-6");
+  pkmnCard.classList.add("col-8");
+  pkmnCard.classList.add("text-capitalize");
   pkmnCard.classList.add("row");
-  let pkmnImg = document.querySelector("#pokemonImg");
+  let pkmnImg = document.createElement("div");
+  pkmnImg.setAttribute("id", "pokemonImg");
   pkmnImg.classList.add("col");
   pkmnImg.classList.add("col-lg-3");
 
-  let pkmnInfo = document.querySelector("#pokemonInfo");
+  let pkmnInfo = document.createElement("div");
+  pkmnInfo.setAttribute("id", "pokemonInfo");
   pkmnInfo.classList.add("col");
   pkmnInfo.classList.add("col-lg-4");
   pkmnInfo.classList.add("row");
 
-  //Hace falta div de imagen//
-  //   let defaultImg = pokemon.sprites.other.dream_world.front_default;
+  // Hace falta div de imagen//
+  let defaultImg = pokemon.sprites.other.dream_world.front_default;
 
-  //   let img = document.createElement("img");
-  //   img.setAttribute("src", defaultImg);
-  //   img.setAttribute("id", "imgPokemon");
+  let img = document.createElement("img");
+  img.setAttribute("src", defaultImg);
+  img.setAttribute("id", "imgPokemon");
 
   let pkmnNumber = document.createElement("span");
   pkmnNumber.setAttribute("id", "pokemonNumber");
@@ -82,6 +84,7 @@ const renderNewPokemon = (pokemon) => {
 
   pkmnCard.appendChild(pkmnImg);
   pkmnCard.appendChild(pkmnInfo);
+  show.appendChild(pkmnCard);
 };
 
 const renderAllPokemons = (allPokemonsArray) => {

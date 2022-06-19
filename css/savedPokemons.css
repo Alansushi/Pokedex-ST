@@ -1,0 +1,71 @@
+#logoGeneral {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  background-color: #565656;
+  margin-bottom: 100px;
+}
+
+#fatherpokedexlogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#pokedexlogo {
+  width: 30%;
+  height: auto;
+}
+
+#homeButtonGroup {
+  margin: 100px;
+}
+
+#mainInfo {
+  margin-top: 500px;
+}
+
+#homeButton {
+  margin: 20px 0 200px 0;
+}
+
+#showPokemons {
+  margin-top: 100px;
+}
+
+#savedPokemonCard {
+  font-weight: 800;
+  border-radius: 30px;
+  background-color: #dcdcdc;
+  background-image: linear-gradient(160deg, #dcdcdc 0%, #960000 100%);
+  border: 2px solid black;
+  height: 200px;
+  width: 100%;
+  margin: 20px 1vw 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#savedPokemonCard:hover {
+  opacity: 70%;
+}
+/*# sourceMappingURL=savedPokemons.css.map */

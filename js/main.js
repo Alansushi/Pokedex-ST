@@ -16,9 +16,13 @@ const onGetRequest = (pokemones) => {
         const response = JSON.parse(xhr.response);
 
         let pokemon = response;
-        pokemonToSave = response;
 
         renderNewPokemon(pokemon);
+
+        let saveButton = document.querySelector("#saveButton");
+        saveButton.addEventListener("click", function () {
+          onSave(pokemon);
+        });
       }
     }
   });
@@ -29,7 +33,7 @@ const onGetRequest = (pokemones) => {
   xhr.send();
 };
 onGetRequest();
-let pokemonToSave;
+
 //Creamos la petición para postear a la BD el pokemon //
 const onSave = (pokemon) => {
   const xhr = new XMLHttpRequest();
@@ -41,7 +45,7 @@ const onSave = (pokemon) => {
     }
   });
   const URL_DB =
-    "mongodb+srv://alanguerrerog:JNfX55zoQNsBW3BV@cluster0.aweaow5.mongodb.net/pokedex?retryWrites=true&w=majority";
+    "https://pokedex-5c815-default-rtdb.firebaseio.com/savedPokemons.json";
 
   xhr.open("POST", URL_DB);
   xhr.send(JSON.stringify(pokemon));
@@ -120,10 +124,6 @@ newElement.addEventListener("click", function () {
   onGetRequest();
 });
 
-let saveButton = document.querySelector("#saveButton");
-saveButton.addEventListener("click", function () {
-  onSave(pokemonToSave);
-});
 const alertDiv = document.getElementById("alertDiv");
 
 const alert = (message, type) => {

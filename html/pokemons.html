@@ -25,38 +25,38 @@
       </a>
     </header>
 
-    <main id="mainInfo" class="col col-lg-12 col-12">
-      <div class="row">
-        <a href="/" class="text-decoration-none">
-          <button
+    <main id="mainInfo" class="col col-lg-12 col-12 container">
+      <div id="mainInfo" class="row">
+        <div id="homeButtonGroup" class="col col-lg-12 col-12">
+          <a
             id="homeButton"
-            type="button"
-            class="btn btn-dark text-decoration-none"
+            href="/"
+            class="col col-lg-6 col-12 text-decoration-none"
           >
-            HOME<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="currentColor"
-              class="bi bi-house-door-fill"
-              viewBox="0 0 16 16"
+            <button
+              id="homeButton"
+              type="button"
+              class="btn btn-dark text-decoration-none"
             >
-              <path
-                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
-              />
-            </svg>
-          </button>
-        </a>
-        <div class="col col-lg-2 col-2"></div>
-
-        <div id="pokemonCard" class="col col-lg-8 col-8">
-          <div class="row">
-            <div id="pokemonImg" class="col col-lg-3 col-3"></div>
-
-            <div id="pokemonInfo" class="col col-lg-7 col-7"></div>
-          </div>
+              HOME<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-house-door-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+                />
+              </svg>
+            </button>
+          </a>
         </div>
-        <div class="col col-lg-2 col-2"></div>
+
+        <div class="row col col-lg-6">
+          <div id="showPokemons" class="show"></div>
+        </div>
       </div>
     </main>
     <script src="../js/view.js"></script>

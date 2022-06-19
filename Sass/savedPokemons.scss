@@ -1,0 +1,66 @@
+$bgCardColor : rgb(218, 218, 218);
+$bgElements: #505050; 
+$blackColor : black;
+$secondaryFontColor:#565656 ;
+$importantFontWeight: 800;
+$bgnewPokemonButton: rgb(150, 0, 0);
+
+#logoGeneral{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   background-color: $secondaryFontColor;
+   margin-bottom: 100px;
+   
+
+   
+   
+}
+#fatherpokedexlogo{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+}
+#pokedexlogo{
+   width: 30%;
+   height: auto;
+   
+}
+#homeButtonGroup{
+  margin: 100px;
+}
+#mainInfo{
+margin-top: 500px;
+
+}
+#homeButton{
+   margin: 20px 0 200px 0;
+}
+#showPokemons{
+   margin-top: 100px;
+}
+
+#savedPokemonCard{
+   font-weight: $importantFontWeight;
+   border-radius: 30px;
+   // background-color: $bgCardColor;
+   background-color: #dcdcdc;
+   background-image: linear-gradient(160deg, #dcdcdc 0%, $bgnewPokemonButton 100%);
+
+  
+
+   border: 2px solid $blackColor;
+   height: 200px;
+   width:100%;
+   margin: 20px 1vw 20px 0;
+  
+   display: flex;
+   align-items: center;
+   align-content: center;
+}
+   
+#savedPokemonCard:hover{
+   opacity: 70%;
+}
