@@ -124,3 +124,23 @@ let saveButton = document.querySelector("#saveButton");
 saveButton.addEventListener("click", function () {
   onSave(pokemonToSave);
 });
+const alertDiv = document.getElementById("alertDiv");
+
+const alert = (message, type) => {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = [
+    `<div  id="alert" class="alert alert-${type} alert-dismissible fade show" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    "</div>",
+  ].join("");
+
+  alertDiv.append(wrapper);
+};
+
+const alertTrigger = document.getElementById("saveButton");
+if (alertTrigger) {
+  alertTrigger.addEventListener("click", () => {
+    alert("¡Guardaste este pokemon en la base de datos!", "dark");
+  });
+}
